@@ -8,19 +8,22 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `api`: [Fastify](https://fastify.dev/) + [tRPC](https://trpc.io/) app
-- `web`: [Nuxt](https://nuxt.com/) app
+- `apps/api`: [Fastify](https://fastify.dev/) app
+- `apps/web`: [React](https://react.dev/) app
+- `packages/trpc`: shared [tRPC](https://react.dev/) package
+- `packages/typescript-config`: shared tsconfig package
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 ### Build
 
-To build all apps and packages, run the following command:
+To build all apps and packages and start the app, run the following command:
 
 ```
-npm run build
 npm start
 ```
+
+You can now visit the app on [http://localhost:3000](http://localhost:3000)
 
 ### Develop
 
@@ -29,3 +32,5 @@ To develop all apps and packages, run the following command:
 ```
 npm run dev
 ```
+
+You can now visit the app on [http://localhost:5173](http://localhost:5173)
