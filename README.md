@@ -20,6 +20,7 @@ Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 To build all apps and packages and start the app, run the following command:
 
 ```
+npm install
 npm start
 ```
 
@@ -30,6 +31,7 @@ You can now visit the app on [http://localhost:3000](http://localhost:3000)
 To develop all apps and packages, run the following command:
 
 ```
+npm install
 npm run dev
 ```
 
