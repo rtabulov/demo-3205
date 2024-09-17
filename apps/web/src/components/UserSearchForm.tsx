@@ -1,3 +1,5 @@
+import { MaskitoOptions } from '@maskito/core';
+import { useMaskito } from '@maskito/react';
 import { Button, Col, Form, Input, Row } from 'antd';
 import { memo } from 'react';
 
@@ -11,13 +13,34 @@ export interface UserSearchFormProps {
   loading?: boolean;
 }
 
+const maskOptions: MaskitoOptions = {
+  mask: [
+    /\d/,
+    /\d/,
+    '-',
+    /\d/,
+    /\d/,
+    '-',
+    /\d/,
+    /\d/,
+    '-',
+    /\d/,
+    /\d/,
+    '-',
+    /\d/,
+    /\d/,
+  ],
+};
+
 function UserSearchForm({ onFinish }: UserSearchFormProps) {
+  const inputRef = useMaskito({ options: maskOptions });
+
   return (
     <Row>
       <Col span={24}>
         <Form<UserSearchFormValues> onFinish={onFinish}>
           <Row gutter={24}>
-            <Col span={24} xl={10}>
+            <Col span={24} md={10}>
               <Form.Item
                 name="email"
                 label="Email"
@@ -28,8 +51,8 @@ function UserSearchForm({ onFinish }: UserSearchFormProps) {
               </Form.Item>
             </Col>
 
-            <Col span={24} xl={10}>
-              <Form.Item name="number" label="Number">
+            <Col span={24} md={10} ref={inputRef}>
+              <Form.Item name="number" label="Number" trigger="onInput">
                 <Input placeholder="Search" />
               </Form.Item>
             </Col>

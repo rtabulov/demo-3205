@@ -13,7 +13,10 @@ export const appRouter = t.router({
     .input(async (value) => {
       const schema = z.object({
         email: z.string().min(1, 'Please enter something'),
-        number: z.string().optional(),
+        number: z
+          .string()
+          .optional()
+          .transform((v) => v?.replaceAll('-', '')),
       });
 
       const { success, data, error } = await schema.safeParseAsync(value);
@@ -32,7 +35,7 @@ export const appRouter = t.router({
         keys: ['email', 'number'],
         isCaseSensitive: false,
         findAllMatches: true,
-        threshold: 0.2,
+        threshold: 0.1,
         ignoreLocation: true,
         useExtendedSearch: true,
         includeScore: true,

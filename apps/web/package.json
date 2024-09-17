@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@maskito/core": "^3.0.1",
+    "@maskito/react": "^3.0.1",
     "@repo/trpc": "*",
     "@tanstack/react-query": "^5.56.2",
     "@trpc/client": "~10.45.2",
