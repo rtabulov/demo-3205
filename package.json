@@ -1,0 +1,26 @@
+{
+  "name": "demo-3205",
+  "private": true,
+  "scripts": {
+    "start": "turbo start",
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "lint-packages": "manypkg check",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "dependencies": {
+    "@manypkg/cli": "^0.21.4",
+    "prettier": "^3.2.5",
+    "turbo": "^2.1.2",
+    "typescript": "^5.5.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@10.8.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

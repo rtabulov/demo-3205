@@ -1,0 +1,53 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env*",
+        "vite.config.*",
+        "tsconfig.json",
+        "package.json",
+        "package-lock.json",
+        "yarn.lock",
+        "next.config.js",
+        "prisma/schema.prisma",
+        "prisma/.env",
+        "prisma/.env.development",
+        "prisma/.env.production",
+        "prisma/.env.test",
+        "prisma/.env.staging",
+        "prisma/.env.local",
+        "prisma/.env.development.local",
+        "prisma/.env.production.local",
+        "prisma/.env.test.local",
+        "prisma/.env.staging.local"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "dist/**",
+        "build/**",
+        "public"
+      ]
+    },
+    "start": {
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "build-trpc": {
+      "outputs": ["packages/trpc/dist/**"]
+    },
+    "build-apps": {
+      "dependsOn": ["build-trpc"]
+    }
+  }
+}
