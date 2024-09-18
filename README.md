@@ -20,8 +20,8 @@ Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 To build all apps and packages and start the app, run the following command:
 
 ```
-npm install
-npm start
+pnpm install
+pnpm start
 ```
 
 You can now visit the app on [http://localhost:3000](http://localhost:3000)
@@ -31,8 +31,8 @@ You can now visit the app on [http://localhost:3000](http://localhost:3000)
 To develop all apps and packages, run the following command:
 
 ```
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 You can now visit the app on [http://localhost:5173](http://localhost:5173)

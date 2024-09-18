@@ -12,7 +12,7 @@
   "dependencies": {
     "@maskito/core": "^3.0.1",
     "@maskito/react": "^3.0.1",
-    "@repo/trpc": "*",
+    "@repo/trpc": "workspace:*",
     "@tanstack/react-query": "^5.56.2",
     "@trpc/client": "~10.45.2",
     "antd": "^5.20.6",
